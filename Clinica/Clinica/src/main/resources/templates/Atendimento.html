@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Atendimento</title>
+</head>
+<body>
+<h1>Cadastro de Atendimento</h1>
+<form method="post" th:action="@{/atendimentos/save}">
+    <label>Nome: <input type="text" name="nome" /></label>
+    <button type="submit">Salvar</button>
+</form>
+<h1>Lista de Usuário</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Data/Hora</th>
+        <th>Analise</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="atendimento : ${atendimento}">
+        <td th:text="${atendimento.nIdAtendimento}"></td>
+        <td th:text="${atendimento.dDataHora}"></td>
+        <td th:text="${atendimento.stAnalise}"></td>
+    </tr>
+    </tbody>
+</body>
+</html>

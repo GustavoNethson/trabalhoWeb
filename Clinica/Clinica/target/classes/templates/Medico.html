@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Médico</title>
+</head>
+<body>
+<h1>Cadastro de Médico</h1>
+<form method="post" th:action="@{/medicos/save}">
+    <label>Nome: <input type="text" name = "nome"></label>
+    <button type="submit">Salvar</button>
+</form>
+<h1>Lista de Médicos</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Especialidade</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="medico : ${medico}">
+        <td th:text="${medico.nIdMedico}"></td>
+        <td th:text="${medico.stNomeMedico}"></td>
+        <td th:text="${medico.stEspecialidade}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

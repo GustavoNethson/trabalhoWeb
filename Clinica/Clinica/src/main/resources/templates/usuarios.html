@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymekeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuário</title>
+</head>
+<body>
+<h1>Cadastro de Usuário</h1>
+<form method="post" th:action ="@{/usuarios/save}">
+    <label>Nome: <input type="text" name="stNomUsu" /></label>
+    <br>
+    <label>Login: <input type="text" name="stLoginUsu" /></label>
+    <br>
+    <label>Senha: <input type="text" name="stSenhaUsu" /></label>
+    <br>
+    <label>Admin: <input type="text" name="boAdminUsu" /></label>
+    <br>
+    <button type="submit">Salvar</button>
+</form>
+<h1>Lista de Usuário</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Login</th>
+        <th>Admin</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="usuario : ${usuarios}">
+        <td th:text="${usuario.nIdUsu}"></td>
+        <td th:text="${usuario.stNomUsu}"></td>
+        <td th:text="${usuario.stLoginUsu}"></td>
+        <td th:text="${usuario.boAdminUsu}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
